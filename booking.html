@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Book an Appointment | Luxe Brew Beauty Lounge</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Lato:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- ============ NAVIGATION BAR ============ -->
+  <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
+    <div class="container">
+      <a class="navbar-brand" href="index.html">Luxe Brew <span>Beauty</span></a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMenu" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarMenu">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
+          <li class="nav-item"><a class="nav-link" href="gallery.html">Gallery</a></li>
+          <li class="nav-item"><a class="nav-link active" href="booking.html">Booking</a></li>
+          <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ============ PAGE HEADER ============ -->
+  <section class="page-header">
+    <div class="container">
+      <p class="section-subtitle" style="color: var(--gold);">Reserve Your Spot</p>
+      <h1>Booking & Feedback</h1>
+      <p>Book a service or share your experience with us.</p>
+    </div>
+  </section>
+
+  <!-- ============ FORMS SECTION ============ -->
+  <section class="section-padding form-section">
+    <div class="container">
+      <div class="row g-5">
+
+        <!-- ======= BOOKING FORM ======= -->
+        <div class="col-lg-6 reveal">
+          <div class="form-card">
+
+            <p class="section-subtitle">Make a Reservation</p>
+            <h3>Book an Appointment</h3>
+            <div class="gold-line gold-line-left"></div>
+            <p class="mb-4" style="font-size: 0.9rem;">Fill in your details below and we will confirm your booking as soon as possible.</p>
+
+            <!--
+              HTML5 FORM VALIDATION:
+              - required = field must be filled
+              - type="email" = validates email format
+              - type="tel" = for phone numbers
+              - Bootstrap's 'was-validated' class shows red/green borders after submit
+            -->
+            <form id="bookingForm" novalidate>
+
+              <!-- Full Name -->
+              <div class="mb-3">
+                <label for="bookingName" class="form-label">Full Name</label>
+                <input type="text" class="form-control" id="bookingName"
+                       placeholder="Enter your full name"
+                       required minlength="2">
+                <!-- Error message shown if invalid -->
+                <div class="invalid-feedback">Please enter your full name.</div>
+              </div>
+
+              <!-- Email Address -->
+              <div class="mb-3">
+                <label for="bookingEmail" class="form-label">Email Address</label>
+                <input type="email" class="form-control" id="bookingEmail"
+                       placeholder="e.g. yourname@email.com"
+                       required>
+                <div class="invalid-feedback">Please enter a valid email address.</div>
+              </div>
+
+              <!-- Phone Number -->
+              <div class="mb-3">
+                <label for="bookingPhone" class="form-label">Phone Number</label>
+                <input type="tel" class="form-control" id="bookingPhone"
+                       placeholder="e.g. 71234567"
+                       required pattern="[0-9]{7,10}">
+                <div class="invalid-feedback">Please enter a valid phone number (7–10 digits).</div>
+              </div>
+
+              <!-- Service Selection -->
+              <div class="mb-3">
+                <label for="bookingService" class="form-label">Select a Service</label>
+                <select class="form-select" id="bookingService" required>
+                  <option value="" disabled selected>-- Choose a service --</option>
+                  <optgroup label="Beauty Services">
+                    <option value="facial">Signature Facial – P280</option>
+                    <option value="anti-aging">Anti-Aging Facial – P380</option>
+                    <option value="manicure">Classic Manicure – P150</option>
+                    <option value="gel-manicure">Gel Manicure – P220</option>
+                    <option value="pedicure">Luxury Pedicure – P200</option>
+                    <option value="lash-ext">Lash Extensions – P350</option>
+                    <option value="lash-lift">Lash Lift & Tint – P270</option>
+                    <option value="makeup">Event Makeup – P400</option>
+                    <option value="spa">Full Spa Package – P850</option>
+                  </optgroup>
+                  <optgroup label="Coffee & Lounge">
+                    <option value="lounge">Lounge Visit Only</option>
+                  </optgroup>
+                </select>
+                <div class="invalid-feedback">Please select a service.</div>
+              </div>
+
+              <!-- Preferred Date -->
+              <div class="mb-3">
+                <label for="bookingDate" class="form-label">Preferred Date</label>
+                <input type="date" class="form-control" id="bookingDate" required>
+                <div class="invalid-feedback">Please select a preferred date.</div>
+              </div>
+
+              <!-- Preferred Time -->
+              <div class="mb-3">
+                <label for="bookingTime" class="form-label">Preferred Time</label>
+                <select class="form-select" id="bookingTime" required>
+                  <option value="" disabled selected>-- Select a time --</option>
+                  <option value="08:00">08:00 AM</option>
+                  <option value="09:00">09:00 AM</option>
+                  <option value="10:00">10:00 AM</option>
+                  <option value="11:00">11:00 AM</option>
+                  <option value="12:00">12:00 PM</option>
+                  <option value="13:00">01:00 PM</option>
+                  <option value="14:00">02:00 PM</option>
+                  <option value="15:00">03:00 PM</option>
+                  <option value="16:00">04:00 PM</option>
+                  <option value="17:00">05:00 PM</option>
+                </select>
+                <div class="invalid-feedback">Please select a preferred time.</div>
+              </div>
+
+              <!-- Additional Message -->
+              <div class="mb-4">
+                <label for="bookingMessage" class="form-label">Additional Message <span style="color: var(--brown-light); font-weight: 400;">(optional)</span></label>
+                <textarea class="form-control" id="bookingMessage" rows="3"
+                          placeholder="Any special requests or notes for our team..."></textarea>
+              </div>
+
+              <!-- Submit Button -->
+              <button type="submit" class="btn-gold w-100" style="padding: 14px;">
+                <i class="bi bi-calendar-check me-2"></i>Confirm Booking
+              </button>
+
+            </form>
+            <!-- End Booking Form -->
+
+          </div>
+        </div>
+        <!-- End Booking Form Card -->
+
+
+        <!-- ======= FEEDBACK FORM ======= -->
+        <div class="col-lg-6 reveal">
+          <div class="form-card">
+
+            <p class="section-subtitle">Share Your Experience</p>
+            <h3>Customer Feedback</h3>
+            <div class="gold-line gold-line-left"></div>
+            <p class="mb-4" style="font-size: 0.9rem;">We value your opinion. Help us improve by sharing your thoughts after your visit.</p>
+
+            <form id="feedbackForm" novalidate>
+
+              <!-- Full Name -->
+              <div class="mb-3">
+                <label for="feedbackName" class="form-label">Full Name</label>
+                <input type="text" class="form-control" id="feedbackName"
+                       placeholder="Enter your full name"
+                       required minlength="2">
+                <div class="invalid-feedback">Please enter your full name.</div>
+              </div>
+
+              <!-- Email -->
+              <div class="mb-3">
+                <label for="feedbackEmail" class="form-label">Email Address</label>
+                <input type="email" class="form-control" id="feedbackEmail"
+                       placeholder="e.g. yourname@email.com"
+                       required>
+                <div class="invalid-feedback">Please enter a valid email address.</div>
+              </div>
+
+              <!-- Phone -->
+              <div class="mb-3">
+                <label for="feedbackPhone" class="form-label">Phone Number</label>
+                <input type="tel" class="form-control" id="feedbackPhone"
+                       placeholder="e.g. 71234567"
+                       required pattern="[0-9]{7,10}">
+                <div class="invalid-feedback">Please enter a valid phone number.</div>
+              </div>
+
+              <!-- Service Visited -->
+              <div class="mb-3">
+                <label for="feedbackService" class="form-label">Service You Visited</label>
+                <select class="form-select" id="feedbackService" required>
+                  <option value="" disabled selected>-- Which service did you use? --</option>
+                  <option value="facial">Facial</option>
+                  <option value="manicure">Manicure</option>
+                  <option value="pedicure">Pedicure</option>
+                  <option value="lash">Lash Extensions</option>
+                  <option value="makeup">Makeup</option>
+                  <option value="spa">Spa Package</option>
+                  <option value="coffee">Coffee Lounge</option>
+                  <option value="other">Other</option>
+                </select>
+                <div class="invalid-feedback">Please select the service you visited.</div>
+              </div>
+
+              <!-- Rating -->
+              <div class="mb-3">
+                <label for="feedbackRating" class="form-label">Overall Rating</label>
+                <select class="form-select" id="feedbackRating" required>
+                  <option value="" disabled selected>-- Rate your experience --</option>
+                  <option value="5">5 Stars - Exceptional</option>
+                  <option value="4">4 Stars - Very Good</option>
+                  <option value="3">3 Stars - Good</option>
+                  <option value="2">2 Stars - Needs Improvement</option>
+                  <option value="1">1 Star - Poor</option>
+                </select>
+                <div class="invalid-feedback">Please select a rating.</div>
+              </div>
+
+              <!-- Message / Review -->
+              <div class="mb-4">
+                <label for="feedbackMessage" class="form-label">Your Review</label>
+                <textarea class="form-control" id="feedbackMessage" rows="4"
+                          placeholder="Tell us about your experience at Luxe Brew..."
+                          required minlength="10"></textarea>
+                <div class="invalid-feedback">Please write a short review (at least 10 characters).</div>
+              </div>
+
+              <!-- Submit Button -->
+              <button type="submit" class="btn-outline-gold w-100" style="padding: 14px;">
+                <i class="bi bi-send me-2"></i>Submit Feedback
+              </button>
+
+            </form>
+            <!-- End Feedback Form -->
+
+          </div>
+        </div>
+        <!-- End Feedback Form Card -->
+
+      </div><!-- End row -->
+
+
+      <!-- Contact Info Strip -->
+      <div class="row g-3 mt-4 reveal">
+        <div class="col-md-6">
+          <div style="background-color: var(--white); border-radius: 12px; padding: 20px 25px; display: flex; align-items: center; gap: 15px; box-shadow: 0 4px 15px var(--shadow);">
+            <i class="bi bi-telephone-fill" style="font-size: 1.5rem; color: var(--gold);"></i>
+            <div>
+              <small style="color: var(--gold); text-transform: uppercase; letter-spacing: 1px; font-size: 0.75rem;">Call Us</small>
+              <p style="font-weight: 700; color: var(--brown); margin: 0; font-size: 1.05rem;">78628931</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div style="background-color: var(--white); border-radius: 12px; padding: 20px 25px; display: flex; align-items: center; gap: 15px; box-shadow: 0 4px 15px var(--shadow);">
+            <i class="bi bi-envelope-fill" style="font-size: 1.5rem; color: var(--gold);"></i>
+            <div>
+              <small style="color: var(--gold); text-transform: uppercase; letter-spacing: 1px; font-size: 0.75rem;">Email Us</small>
+              <p style="font-weight: 700; color: var(--brown); margin: 0; font-size: 0.95rem;">albertlaone2304@gmail.com</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ============ BOOKING CONFIRMATION MODAL ============ -->
+  <!-- This popup appears after the booking form is submitted successfully -->
+  <div class="modal fade" id="confirmModal" tabindex="-1" aria-labelledby="confirmModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="confirmModalLabel">Booking Confirmed</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <div class="modal-icon"><i class="bi bi-check-circle-fill"></i></div>
+          <h5 style="color: var(--brown); font-family: 'Playfair Display', serif; margin-bottom: 10px;">Thank You for Booking!</h5>
+          <p style="color: var(--text-medium); font-size: 0.95rem;">
+            Thank you for booking with <strong>Luxe Brew Beauty Lounge</strong>. We will contact you shortly to confirm your appointment.
+          </p>
+          <p style="color: var(--gold); font-size: 0.85rem; margin-bottom: 0;">
+            We look forward to welcoming you!
+          </p>
+        </div>
+        <div class="modal-footer" style="justify-content: center; border-top: none; padding-bottom: 25px;">
+          <button type="button" class="btn-gold" data-bs-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- ============ FEEDBACK CONFIRMATION MODAL ============ -->
+  <div class="modal fade" id="feedbackModal" tabindex="-1" aria-labelledby="feedbackModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="feedbackModalLabel">Feedback Received</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <div class="modal-icon"><i class="bi bi-heart-fill"></i></div>
+          <h5 style="color: var(--brown); font-family: 'Playfair Display', serif; margin-bottom: 10px;">We Appreciate Your Feedback!</h5>
+          <p style="color: var(--text-medium); font-size: 0.95rem;">
+            Thank you for taking the time to share your experience at <strong>Luxe Brew Beauty Lounge</strong>. Your review helps us serve you better.
+          </p>
+        </div>
+        <div class="modal-footer" style="justify-content: center; border-top: none; padding-bottom: 25px;">
+          <button type="button" class="btn-gold" data-bs-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="footer">
+    <div class="container">
+      <div class="row g-4">
+        <div class="col-md-4">
+          <h5>Luxe Brew Beauty Lounge</h5>
+          <p>Where beauty meets indulgence. Your luxury self-care destination.</p>
+        </div>
+        <div class="col-md-4">
+          <h5>Quick Links</h5>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="services.html">Services & Menu</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+            <li><a href="booking.html">Book Appointment</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div class="col-md-4">
+          <h5>Contact Us</h5>
+          <p><i class="bi bi-telephone me-2" style="color: var(--gold);"></i> 78628931</p>
+          <p><i class="bi bi-envelope me-2" style="color: var(--gold);"></i> albertlaone2304@gmail.com</p>
+          <p><i class="bi bi-clock me-2" style="color: var(--gold);"></i> Mon–Sat: 8:00 AM – 7:00 PM</p>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 Luxe Brew Beauty Lounge. All Rights Reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

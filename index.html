@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- =====================================================
+       LUXE BREW BEAUTY LOUNGE - Homepage (index.html)
+       Student Website Assignment - Web Design & Development
+       Uses: HTML5, Bootstrap 5, External CSS, JavaScript
+  ====================================================== -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Luxe Brew Beauty Lounge | Beauty, Coffee & Comfort</title>
+
+  <!-- Bootstrap 5 CSS (from CDN) -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Bootstrap Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+
+  <!-- Google Fonts: Playfair Display (headings) + Lato (body) -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Lato:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+  <!-- Our External CSS Stylesheet -->
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <!-- ============ NAVIGATION BAR ============ -->
+  <!-- Bootstrap navbar: responsive with hamburger menu on mobile -->
+  <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
+    <div class="container">
+
+      <!-- Brand Logo -->
+      <a class="navbar-brand" href="index.html">
+        Luxe Brew <span>Beauty</span>
+      </a>
+
+      <!-- Hamburger button for mobile screens -->
+      <button class="navbar-toggler" type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#navbarMenu"
+              aria-controls="navbarMenu"
+              aria-expanded="false"
+              aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <!-- Navigation Links -->
+      <div class="collapse navbar-collapse" id="navbarMenu">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link active" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
+          <li class="nav-item"><a class="nav-link" href="gallery.html">Gallery</a></li>
+          <li class="nav-item"><a class="nav-link" href="booking.html">Booking</a></li>
+          <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <!-- End Navbar -->
+
+
+  <!-- ============ HERO SECTION ============ -->
+  <!-- The most eye-catching part. Uses CSS animations (fadeInUp, fadeInDown) -->
+  <section class="hero-section">
+    <div class="hero-content">
+
+      <!-- Small badge above the main title -->
+      <div class="hero-badge">Beauty + Coffee + Luxury</div>
+
+      <!-- Main hero heading -->
+      <h1 class="hero-title">
+        Beauty, Coffee &<br>
+        <span>Comfort</span> in One<br>
+        Luxury Experience
+      </h1>
+
+      <!-- Subheading text -->
+      <p class="hero-subtitle">
+        Where every treatment is a ritual, and every cup is a moment of pure indulgence.
+      </p>
+
+      <!-- Call to Action Buttons -->
+      <div class="hero-buttons">
+        <a href="booking.html" class="btn-gold">Book an Appointment</a>
+        <a href="services.html" class="btn-outline-gold" style="color: var(--gold-light); border-color: var(--gold-light);">View Services</a>
+      </div>
+
+    </div>
+  </section>
+  <!-- End Hero Section -->
+
+
+  <!-- ============ FEATURED SERVICES SECTION ============ -->
+  <section class="section-padding">
+    <div class="container">
+      <div class="text-center reveal">
+        <p class="section-subtitle">What We Offer</p>
+        <h2 class="section-title">Our Signature Services</h2>
+        <div class="gold-line"></div>
+        <p class="mb-5" style="max-width: 600px; margin: 0 auto;">
+          From luxurious beauty treatments to artisan coffee, every visit is a full self-care experience.
+        </p>
+      </div>
+
+      <!-- Bootstrap Grid: 3 columns on large screens, 1 on mobile -->
+      <div class="row g-4">
+
+        <!-- Service Card 1 -->
+        <div class="col-md-6 col-lg-4 reveal">
+          <div class="service-card">
+            <div class="card-icon"><i class="bi bi-stars"></i></div>
+            <h4>Luxury Facials</h4>
+            <p>Rejuvenate your skin with our signature facial treatments using premium skincare products.</p>
+            <span class="price-tag">From P250</span>
+          </div>
+        </div>
+
+        <!-- Service Card 2 -->
+        <div class="col-md-6 col-lg-4 reveal">
+          <div class="service-card">
+            <div class="card-icon"><i class="bi bi-hand-index-thumb"></i></div>
+            <h4>Manicure & Pedicure</h4>
+            <p>Perfectly polished nails with our relaxing hand and foot treatments.</p>
+            <span class="price-tag">From P180</span>
+          </div>
+        </div>
+
+        <!-- Service Card 3 -->
+        <div class="col-md-6 col-lg-4 reveal">
+          <div class="service-card">
+            <div class="card-icon"><i class="bi bi-eye"></i></div>
+            <h4>Lash Extensions</h4>
+            <p>Wake up beautiful with our stunning lash extensions, customized to your style.</p>
+            <span class="price-tag">From P300</span>
+          </div>
+        </div>
+
+        <!-- Service Card 4 -->
+        <div class="col-md-6 col-lg-4 reveal">
+          <div class="service-card">
+            <div class="card-icon"><i class="bi bi-cup-hot"></i></div>
+            <h4>Artisan Coffee</h4>
+            <p>Handcrafted cappuccinos, lattes, and mochas to complement your beauty session.</p>
+            <span class="price-tag">From P35</span>
+          </div>
+        </div>
+
+        <!-- Service Card 5 -->
+        <div class="col-md-6 col-lg-4 reveal">
+          <div class="service-card">
+            <div class="card-icon"><i class="bi bi-brush"></i></div>
+            <h4>Professional Makeup</h4>
+            <p>Event-ready makeup by our certified artists for any occasion.</p>
+            <span class="price-tag">From P350</span>
+          </div>
+        </div>
+
+        <!-- Service Card 6 -->
+        <div class="col-md-6 col-lg-4 reveal">
+          <div class="service-card">
+            <div class="card-icon"><i class="bi bi-flower1"></i></div>
+            <h4>Spa Treatment</h4>
+            <p>Full-body relaxation with our premium spa packages designed for total rejuvenation.</p>
+            <span class="price-tag">From P450</span>
+          </div>
+        </div>
+
+      </div><!-- End row -->
+
+      <div class="text-center mt-5 reveal">
+        <a href="services.html" class="btn-gold">View Full Menu & Pricing</a>
+      </div>
+    </div>
+  </section>
+  <!-- End Services Section -->
+
+
+  <!-- ============ COFFEE SECTION ============ -->
+  <!-- Dark brown background for contrast and luxury feel -->
+  <section class="coffee-section">
+    <div class="container">
+      <div class="row align-items-center g-5">
+
+        <!-- Text Content -->
+        <div class="col-lg-5 reveal">
+          <p class="section-subtitle">The Lounge</p>
+          <h2 class="section-title" style="color: var(--gold);">Our Coffee Corner</h2>
+          <div class="gold-line gold-line-left"></div>
+          <p class="mb-4">
+            Sip your favorite brew while you wait or simply unwind after your treatment.
+            Our lounge is your personal escape from the everyday rush.
+          </p>
+          <a href="services.html#coffee" class="btn-gold">See Full Coffee Menu</a>
+        </div>
+
+        <!-- Coffee Items Grid -->
+        <div class="col-lg-7">
+          <div class="row g-3">
+            <div class="col-6 col-md-3 reveal">
+              <div class="coffee-item">
+                <i class="bi bi-cup-hot" style="font-size: 1.8rem; color: var(--gold); display: block; margin-bottom: 8px;"></i>
+                <h5>Cappuccino</h5>
+                <p>P45</p>
+              </div>
+            </div>
+            <div class="col-6 col-md-3 reveal">
+              <div class="coffee-item">
+                <i class="bi bi-cup-straw" style="font-size: 1.8rem; color: var(--gold); display: block; margin-bottom: 8px;"></i>
+                <h5>Iced Latte</h5>
+                <p>P55</p>
+              </div>
+            </div>
+            <div class="col-6 col-md-3 reveal">
+              <div class="coffee-item">
+                <i class="bi bi-cup" style="font-size: 1.8rem; color: var(--gold); display: block; margin-bottom: 8px;"></i>
+                <h5>Mocha</h5>
+                <p>P50</p>
+              </div>
+            </div>
+            <div class="col-6 col-md-3 reveal">
+              <div class="coffee-item">
+                <i class="bi bi-cake2" style="font-size: 1.8rem; color: var(--gold); display: block; margin-bottom: 8px;"></i>
+                <h5>Pastries</h5>
+                <p>P30+</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+  <!-- End Coffee Section -->
+
+
+  <!-- ============ EXPERIENCE SECTION ============ -->
+  <section class="section-padding experience-section">
+    <div class="container">
+      <div class="text-center reveal">
+        <p class="section-subtitle">The Luxe Experience</p>
+        <h2 class="section-title">Why Choose Us?</h2>
+        <div class="gold-line"></div>
+      </div>
+
+      <div class="row g-4 mt-2">
+        <div class="col-sm-6 col-lg-3 reveal">
+          <div class="experience-card">
+            <div class="experience-number">500+</div>
+            <h5 style="color: var(--brown); font-family: 'Playfair Display', serif;">Happy Clients</h5>
+            <p style="font-size: 0.85rem;">Trusted by hundreds of satisfied customers.</p>
+          </div>
+        </div>
+        <div class="col-sm-6 col-lg-3 reveal">
+          <div class="experience-card">
+            <div class="experience-number">15+</div>
+            <h5 style="color: var(--brown); font-family: 'Playfair Display', serif;">Beauty Services</h5>
+            <p style="font-size: 0.85rem;">A full menu of premium beauty treatments.</p>
+          </div>
+        </div>
+        <div class="col-sm-6 col-lg-3 reveal">
+          <div class="experience-card">
+            <div class="experience-number">10+</div>
+            <h5 style="color: var(--brown); font-family: 'Playfair Display', serif;">Coffee Blends</h5>
+            <p style="font-size: 0.85rem;">Artisan brews crafted with the finest beans.</p>
+          </div>
+        </div>
+        <div class="col-sm-6 col-lg-3 reveal">
+          <div class="experience-card">
+            <div class="experience-number">5★</div>
+            <h5 style="color: var(--brown); font-family: 'Playfair Display', serif;">Rated Experience</h5>
+            <p style="font-size: 0.85rem;">Consistently top-rated by our loyal community.</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+  <!-- End Experience Section -->
+
+
+  <!-- ============ CALL TO ACTION SECTION ============ -->
+  <section class="section-padding" style="background: linear-gradient(135deg, var(--brown) 0%, var(--brown-medium) 100%); text-align: center;">
+    <div class="container reveal">
+      <p class="section-subtitle" style="color: var(--gold);">Ready to Treat Yourself?</p>
+      <h2 style="color: var(--white); font-family: 'Playfair Display', serif; font-size: 2.4rem; margin-bottom: 15px;">Book Your Luxe Experience Today</h2>
+      <p style="color: var(--gold-light); max-width: 550px; margin: 0 auto 30px;">
+        Reserve your spot and enjoy a luxury beauty and coffee experience unlike any other.
+      </p>
+      <a href="booking.html" class="btn-gold">Book Now</a>
+    </div>
+  </section>
+  <!-- End CTA -->
+
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="footer">
+    <div class="container">
+      <div class="row g-4">
+
+        <!-- Column 1: Brand Info -->
+        <div class="col-md-4">
+          <h5>Luxe Brew Beauty Lounge</h5>
+          <p>Where beauty meets indulgence. Your luxury self-care destination in the heart of the city.</p>
+        </div>
+
+        <!-- Column 2: Quick Links -->
+        <div class="col-md-4">
+          <h5>Quick Links</h5>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="services.html">Services & Menu</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+            <li><a href="booking.html">Book Appointment</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+
+        <!-- Column 3: Contact Info -->
+        <div class="col-md-4">
+          <h5>Contact Us</h5>
+          <p><i class="bi bi-telephone me-2" style="color: var(--gold);"></i> 78628931</p>
+          <p><i class="bi bi-envelope me-2" style="color: var(--gold);"></i> albertlaone2304@gmail.com</p>
+          <p><i class="bi bi-clock me-2" style="color: var(--gold);"></i> Mon–Sat: 8:00 AM – 7:00 PM</p>
+        </div>
+
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2026 Luxe Brew Beauty Lounge. All Rights Reserved.</p>
+      </div>
+    </div>
+  </footer>
+  <!-- End Footer -->
+
+
+  <!-- Bootstrap 5 JavaScript -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Our Custom JavaScript -->
+  <script src="script.js"></script>
+
+</body>
+</html>

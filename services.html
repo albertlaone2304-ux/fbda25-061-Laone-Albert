@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Services & Coffee Menu | Luxe Brew Beauty Lounge</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Lato:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- ============ NAVIGATION BAR ============ -->
+  <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
+    <div class="container">
+      <a class="navbar-brand" href="index.html">Luxe Brew <span>Beauty</span></a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMenu" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarMenu">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+          <li class="nav-item"><a class="nav-link active" href="services.html">Services</a></li>
+          <li class="nav-item"><a class="nav-link" href="gallery.html">Gallery</a></li>
+          <li class="nav-item"><a class="nav-link" href="booking.html">Booking</a></li>
+          <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ============ PAGE HEADER ============ -->
+  <section class="page-header">
+    <div class="container">
+      <p class="section-subtitle" style="color: var(--gold);">What We Offer</p>
+      <h1>Services & Coffee Menu</h1>
+      <p>Premium beauty treatments and artisan coffee, all under one roof.</p>
+    </div>
+  </section>
+
+  <!-- ============ TAB NAVIGATION ============ -->
+  <!-- Bootstrap Tabs: switch between Beauty Services and Coffee Menu -->
+  <section class="section-padding">
+    <div class="container">
+
+      <!-- Tab Buttons -->
+      <div class="services-tabs text-center mb-5 reveal">
+        <ul class="nav nav-pills justify-content-center" id="servicesTabs" role="tablist">
+          <li class="nav-item" role="presentation">
+            <button class="nav-link active" id="beauty-tab" data-bs-toggle="pill" data-bs-target="#beauty" type="button" role="tab">
+              <i class="bi bi-stars me-2"></i>Beauty Services
+            </button>
+          </li>
+          <li class="nav-item" role="presentation">
+            <button class="nav-link" id="coffee-tab" data-bs-toggle="pill" data-bs-target="#coffee" type="button" role="tab" id="coffee">
+              <i class="bi bi-cup-hot me-2"></i>Coffee & Pastries
+            </button>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Tab Content -->
+      <div class="tab-content" id="servicesTabsContent">
+
+        <!-- ======= BEAUTY SERVICES TAB ======= -->
+        <div class="tab-pane fade show active" id="beauty" role="tabpanel">
+
+          <div class="text-center mb-4 reveal">
+            <p class="section-subtitle">Our Treatments</p>
+            <h2 class="section-title">Beauty Services</h2>
+            <div class="gold-line"></div>
+          </div>
+
+          <div class="row g-4">
+
+            <!-- Manicure -->
+            <div class="col-md-6 col-lg-4 reveal">
+              <div class="menu-card">
+                <div>
+                  <p class="menu-card-title"><i class="bi bi-hand-index-thumb me-2" style="color: var(--gold);"></i>Classic Manicure</p>
+                  <p class="menu-card-desc">Shape, buff, and polish for beautifully groomed nails. Includes cuticle care and hand massage.</p>
+                </div>
+                <span class="menu-price">P150</span>
+              </div>
+            </div>
+
+            <!-- Gel Manicure -->
+            <div class="col-md-6 col-lg-4 reveal">
+              <div class="menu-card">
+                <div>
+                  <p class="menu-card-title"><i class="bi bi-hand-index-thumb me-2" style="color: var(--gold);"></i>Gel Manicure</p>
+                  <p class="menu-card-desc">Long-lasting gel polish that stays chip-free for up to 3 weeks. Cured under UV light.</p>
+                </div>
+                <span class="menu-price">P220</span>
+              </div>
+            </div>
+
+            <!-- Pedicure -->
+            <div class="col-md-6 col-lg-4 reveal">
+              <div class="menu-card">
+                <div>
+                  <p class="menu-card-title"><i class="bi bi-dribbble me-2" style="color: var(--gold);"></i>Luxury Pedicure</p>
+                  <p class="menu-card-desc">Foot soak, scrub, massage, and polish. Leaves your feet silky smooth and pampered.</p>
+                </div>
+                <span class="menu-price">P200</span>
+              </div>
+            </div>
+
+            <!-- Facial -->
+            <div class="col-md-6 col-lg-4 reveal">
+              <div class="menu-card">
+                <div>
+                  <p class="menu-card-title"><i class="bi bi-stars me-2" style="color: var(--gold);"></i>Signature Facial</p>
+                  <p class="menu-card-desc">Deep cleanse, exfoliation, extraction, and a nourishing mask for glowing skin.</p>
+                </div>
+                <span class="menu-price">P280</span>
+              </div>
+            </div>
+
+            <!-- Anti-Aging Facial -->
+            <div class="col-md-6 col-lg-4 reveal">
+              <div class="menu-card">
+                <div>
+                  <p class="menu-card-title"><i class="bi bi-stars me-2" style="color: var(--gold);"></i>Anti-Aging Facial</p>
+                  <p class="menu-card-desc">Advanced treatment targeting fine lines and dullness using premium anti-aging serums.</p>
+                </div>
+                <span class="menu-price">P380</span>
+              </div>
+            </div>
+
+            <!-- Lash Extensions -->
+            <div class="col-md-6 col-lg-4 reveal">
+              <div class="menu-card">
+                <div>
+                  <p class="menu-card-title"><i class="bi bi-eye me-2" style="color: var(--gold);"></i>Lash Extensions</p>
+                  <p class="menu-card-desc">Classic or volume lash sets that give you effortless, stunning eyes every day.</p>
+                </div>
+                <span class="menu-price">P350</span>
+              </div>
+            </div>
+
+            <!-- Lash Lift -->
+            <div class="col-md-6 col-lg-4 reveal">
+              <div class="menu-card">
+                <div>
+                  <p class="menu-card-title"><i class="bi bi-eye me-2" style="color: var(--gold);"></i>Lash Lift & Tint</p>
+                  <p class="menu-card-desc">Lift and curl your natural lashes for a wide-eyed look that lasts 6–8 weeks.</p>
+                </div>
+                <span class="menu-price">P270</span>
+              </div>
+            </div>
+
+            <!-- Makeup -->
+            <div class="col-md-6 col-lg-4 reveal">
+              <div class="menu-card">
+                <div>
+                  <p class="menu-card-title"><i class="bi bi-brush me-2" style="color: var(--gold);"></i>Event Makeup</p>
+                  <p class="menu-card-desc">Full glam makeup for weddings, birthdays, graduations, and special occasions.</p>
+                </div>
+                <span class="menu-price">P400</span>
+              </div>
+            </div>
+
+            <!-- Spa -->
+            <div class="col-md-6 col-lg-4 reveal">
+              <div class="menu-card">
+                <div>
+                  <p class="menu-card-title"><i class="bi bi-flower1 me-2" style="color: var(--gold);"></i>Full Spa Package</p>
+                  <p class="menu-card-desc">The ultimate indulgence: full body massage, facial, manicure, pedicure, and coffee included.</p>
+                </div>
+                <span class="menu-price">P850</span>
+              </div>
+            </div>
+
+          </div><!-- End beauty row -->
+        </div>
+        <!-- End Beauty Tab -->
+
+
+        <!-- ======= COFFEE & PASTRIES TAB ======= -->
+        <div class="tab-pane fade" id="coffee" role="tabpanel">
+
+          <div class="text-center mb-4 reveal">
+            <p class="section-subtitle">The Lounge Menu</p>
+            <h2 class="section-title">Coffee & Pastries</h2>
+            <div class="gold-line"></div>
+          </div>
+
+          <!-- Hot Drinks -->
+          <h4 class="mb-3 reveal" style="color: var(--brown-medium); font-family: 'Lato', sans-serif; font-size: 1rem; letter-spacing: 2px; text-transform: uppercase;">Hot Drinks</h4>
+          <div class="row g-4 mb-5">
+            <div class="col-md-6 col-lg-4 reveal">
+              <div class="menu-card">
+                <div>
+                  <p class="menu-card-title"><i class="bi bi-cup-hot me-2" style="color: var(--gold);"></i>Cappuccino</p>
+                  <p class="menu-card-desc">Espresso topped with equal parts steamed milk and silky foam. A classic Italian favourite.</p>
+                </div>
+                <span class="menu-price">P45</span>
+              </div>
+            </div>
+            <div class="col-md-6 col-lg-4 reveal">
+              <div class="menu-card">
+                <div>
+                  <p class="menu-card-title"><i class="bi bi-cup-hot me-2" style="color: var(--gold);"></i>Latte</p>
+                  <p class="menu-card-desc">Smooth espresso with steamed milk. Creamy, gentle, and available in vanilla or caramel.</p>
+                </div>
+                <span class="menu-price">P50</span>
+              </div>
+            </div>
+            <div class="col-md-6 col-lg-4 reveal">
+              <div class="menu-card">
+                <div>
+                  <p class="menu-card-title"><i class="bi bi-cup-hot me-2" style="color: var(--gold);"></i>Mocha</p>
+                  <p class="menu-card-desc">Rich espresso blended with chocolate syrup and steamed milk. Topped with whipped cream.</p>
+                </div>
+                <span class="menu-price">P55</span>
+              </div>
+            </div>
+            <div class="col-md-6 col-lg-4 reveal">
+              <div class="menu-card">
+                <div>
+                  <p class="menu-card-title"><i class="bi bi-cup-hot me-2" style="color: var(--gold);"></i>Americano</p>
+                  <p class="menu-card-desc">Bold double espresso diluted with hot water. Clean, simple, and deeply satisfying.</p>
+                </div>
+                <span class="menu-price">P38</span>
+              </div>
+            </div>
+            <div class="col-md-6 col-lg-4 reveal">
+              <div class="menu-card">
+                <div>
+                  <p class="menu-card-title"><i class="bi bi-cup-hot me-2" style="color: var(--gold);"></i>Hot Chocolate</p>
+                  <p class="menu-card-desc">Indulgent Belgian chocolate melted into warm milk. Perfect for a cozy afternoon treat.</p>
+                </div>
+                <span class="menu-price">P45</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Cold Drinks -->
+          <h4 class="mb-3 reveal" style="color: var(--brown-medium); font-family: 'Lato', sans-serif; font-size: 1rem; letter-spacing: 2px; text-transform: uppercase;">Cold Drinks</h4>
+          <div class="row g-4 mb-5">
+            <div class="col-md-6 col-lg-4 reveal">
+              <div class="menu-card">
+                <div>
+                  <p class="menu-card-title"><i class="bi bi-cup-straw me-2" style="color: var(--gold);"></i>Iced Latte</p>
+                  <p class="menu-card-desc">Chilled espresso poured over ice with cold milk. Refreshing and energizing.</p>
+                </div>
+                <span class="menu-price">P55</span>
+              </div>
+            </div>
+            <div class="col-md-6 col-lg-4 reveal">
+              <div class="menu-card">
+                <div>
+                  <p class="menu-card-title"><i class="bi bi-cup-straw me-2" style="color: var(--gold);"></i>Iced Mocha</p>
+                  <p class="menu-card-desc">Chocolate espresso over ice with cold milk. A chilled version of a café classic.</p>
+                </div>
+                <span class="menu-price">P60</span>
+              </div>
+            </div>
+            <div class="col-md-6 col-lg-4 reveal">
+              <div class="menu-card">
+                <div>
+                  <p class="menu-card-title"><i class="bi bi-cup-straw me-2" style="color: var(--gold);"></i>Frappuccino</p>
+                  <p class="menu-card-desc">Blended ice, espresso, and milk with your choice of flavour. Topped with cream.</p>
+                </div>
+                <span class="menu-price">P65</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Pastries -->
+          <h4 class="mb-3 reveal" style="color: var(--brown-medium); font-family: 'Lato', sans-serif; font-size: 1rem; letter-spacing: 2px; text-transform: uppercase;">Pastries & Treats</h4>
+          <div class="row g-4">
+            <div class="col-md-6 col-lg-4 reveal">
+              <div class="menu-card">
+                <div>
+                  <p class="menu-card-title"><i class="bi bi-cake2 me-2" style="color: var(--gold);"></i>Butter Croissant</p>
+                  <p class="menu-card-desc">Flaky, golden, buttery croissant. Plain or filled with chocolate. Baked fresh daily.</p>
+                </div>
+                <span class="menu-price">P30</span>
+              </div>
+            </div>
+            <div class="col-md-6 col-lg-4 reveal">
+              <div class="menu-card">
+                <div>
+                  <p class="menu-card-title"><i class="bi bi-cake2 me-2" style="color: var(--gold);"></i>Cupcakes</p>
+                  <p class="menu-card-desc">Moist vanilla or chocolate cupcakes with signature cream cheese frosting.</p>
+                </div>
+                <span class="menu-price">P35</span>
+              </div>
+            </div>
+            <div class="col-md-6 col-lg-4 reveal">
+              <div class="menu-card">
+                <div>
+                  <p class="menu-card-title"><i class="bi bi-cake me-2" style="color: var(--gold);"></i>Cheesecake Slice</p>
+                  <p class="menu-card-desc">New York style cheesecake with a biscuit base. Available in strawberry or classic.</p>
+                </div>
+                <span class="menu-price">P55</span>
+              </div>
+            </div>
+            <div class="col-md-6 col-lg-4 reveal">
+              <div class="menu-card">
+                <div>
+                  <p class="menu-card-title"><i class="bi bi-cake2 me-2" style="color: var(--gold);"></i>Cinnamon Roll</p>
+                  <p class="menu-card-desc">Soft, warm cinnamon roll drizzled with sweet glaze. The perfect coffee companion.</p>
+                </div>
+                <span class="menu-price">P40</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+        <!-- End Coffee Tab -->
+
+      </div>
+      <!-- End Tab Content -->
+
+      <div class="text-center mt-5 reveal">
+        <a href="booking.html" class="btn-gold">Book a Beauty Service</a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="footer">
+    <div class="container">
+      <div class="row g-4">
+        <div class="col-md-4">
+          <h5>Luxe Brew Beauty Lounge</h5>
+          <p>Where beauty meets indulgence. Your luxury self-care destination.</p>
+        </div>
+        <div class="col-md-4">
+          <h5>Quick Links</h5>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="services.html">Services & Menu</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+            <li><a href="booking.html">Book Appointment</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div class="col-md-4">
+          <h5>Contact Us</h5>
+          <p><i class="bi bi-telephone me-2" style="color: var(--gold);"></i> 78628931</p>
+          <p><i class="bi bi-envelope me-2" style="color: var(--gold);"></i> albertlaone2304@gmail.com</p>
+          <p><i class="bi bi-clock me-2" style="color: var(--gold);"></i> Mon–Sat: 8:00 AM – 7:00 PM</p>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 Luxe Brew Beauty Lounge. All Rights Reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="script.js"></script>
+
+  <!-- Handle direct anchor link to coffee tab -->
+  <script>
+    // If URL has #coffee, switch to coffee tab automatically
+    if (window.location.hash === '#coffee') {
+      var coffeeTab = document.getElementById('coffee-tab');
+      if (coffeeTab) {
+        new bootstrap.Tab(coffeeTab).show();
+      }
+    }
+  </script>
+</body>
+</html>

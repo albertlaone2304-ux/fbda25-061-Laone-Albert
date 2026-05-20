@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gallery | Luxe Brew Beauty Lounge</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Lato:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+
+  <!-- Extra styles specific to gallery page -->
+  <style>
+    /* Gallery grid using CSS columns layout */
+    .gallery-grid {
+      columns: 3;
+      gap: 16px;
+    }
+    @media (max-width: 768px) {
+      .gallery-grid { columns: 2; }
+    }
+    @media (max-width: 480px) {
+      .gallery-grid { columns: 1; }
+    }
+
+    .gallery-item {
+      break-inside: avoid;
+      margin-bottom: 16px;
+      border-radius: 14px;
+      overflow: hidden;
+      box-shadow: 0 4px 15px var(--shadow);
+      cursor: pointer;
+      transition: transform 0.3s ease;
+    }
+
+    .gallery-item:hover {
+      transform: scale(1.02);
+    }
+
+    /* Each placeholder acts like an image */
+    .gallery-placeholder {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 30px 20px;
+      background: linear-gradient(135deg, var(--brown-medium) 0%, var(--brown-light) 100%);
+      color: var(--gold-light);
+      text-align: center;
+      font-size: 0.82rem;
+    }
+
+    /* Vary heights to create a mosaic effect */
+    .gallery-placeholder.tall { min-height: 300px; }
+    .gallery-placeholder.medium { min-height: 220px; }
+    .gallery-placeholder.short { min-height: 180px; }
+
+    /* Different gradient colors for variety */
+    .gallery-placeholder.pink-bg {
+      background: linear-gradient(135deg, #c97a9a 0%, var(--pink) 100%);
+    }
+    .gallery-placeholder.gold-bg {
+      background: linear-gradient(135deg, var(--gold) 0%, var(--brown-light) 100%);
+    }
+    .gallery-placeholder.dark-bg {
+      background: linear-gradient(135deg, var(--brown) 0%, var(--brown-medium) 100%);
+    }
+    .gallery-placeholder.cream-bg {
+      background: linear-gradient(135deg, var(--brown-light) 0%, #d4956a 100%);
+    }
+
+    .gallery-icon {
+      font-size: 2.5rem;
+      margin-bottom: 10px;
+      color: rgba(255,255,255,0.7);
+    }
+
+    .gallery-caption {
+      font-size: 0.78rem;
+      color: rgba(255, 255, 255, 0.8);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-top: 6px;
+    }
+
+    /* Filter buttons styling */
+    .filter-bar {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      justify-content: center;
+      margin-bottom: 40px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ============ NAVIGATION BAR ============ -->
+  <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
+    <div class="container">
+      <a class="navbar-brand" href="index.html">Luxe Brew <span>Beauty</span></a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMenu" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarMenu">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
+          <li class="nav-item"><a class="nav-link active" href="gallery.html">Gallery</a></li>
+          <li class="nav-item"><a class="nav-link" href="booking.html">Booking</a></li>
+          <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ============ PAGE HEADER ============ -->
+  <section class="page-header">
+    <div class="container">
+      <p class="section-subtitle" style="color: var(--gold);">Our Visual Story</p>
+      <h1>Gallery</h1>
+      <p>A glimpse into the Luxe Brew experience.</p>
+    </div>
+  </section>
+
+  <!-- ============ GALLERY SECTION ============ -->
+  <section class="section-padding">
+    <div class="container">
+
+      <!-- Filter Buttons -->
+      <!-- When clicked, JavaScript shows/hides gallery items by category -->
+      <div class="filter-bar reveal">
+        <button class="gallery-filter-btn btn-gold" data-filter="all">All</button>
+        <button class="gallery-filter-btn btn-outline-gold" data-filter="salon">Salon Interior</button>
+        <button class="gallery-filter-btn btn-outline-gold" data-filter="beauty">Beauty Treatments</button>
+        <button class="gallery-filter-btn btn-outline-gold" data-filter="coffee">Coffee & Lounge</button>
+        <button class="gallery-filter-btn btn-outline-gold" data-filter="nails">Nails & Lashes</button>
+      </div>
+
+      <!-- ----
+        NOTE TO STUDENT:
+        Replace these placeholder divs with real <img> tags once you have photos.
+        Example: <img src="images/salon1.jpg" alt="Salon interior" width="800" height="600">
+        The alt, width and height attributes are REQUIRED by your assignment marking criteria.
+      ---- -->
+
+      <!-- Gallery Grid (CSS columns layout for masonry effect) -->
+      <div class="gallery-grid reveal">
+
+        <!-- Item 1: Salon Interior -->
+        <div class="gallery-item" data-category="salon">
+          <div class="gallery-placeholder tall dark-bg">
+            <i class="bi bi-building gallery-icon"></i>
+            <span>Salon Reception Area</span>
+            <span class="gallery-caption">Salon Interior</span>
+          </div>
+        </div>
+
+        <!-- Item 2: Facial Treatment -->
+        <div class="gallery-item" data-category="beauty">
+          <div class="gallery-placeholder medium pink-bg">
+            <i class="bi bi-stars gallery-icon"></i>
+            <span>Signature Facial Treatment</span>
+            <span class="gallery-caption">Beauty Treatment</span>
+          </div>
+        </div>
+
+        <!-- Item 3: Coffee Cup -->
+        <div class="gallery-item" data-category="coffee">
+          <div class="gallery-placeholder short gold-bg">
+            <i class="bi bi-cup-hot gallery-icon"></i>
+            <span>Artisan Cappuccino</span>
+            <span class="gallery-caption">Coffee</span>
+          </div>
+        </div>
+
+        <!-- Item 4: Nail Art -->
+        <div class="gallery-item" data-category="nails">
+          <div class="gallery-placeholder medium cream-bg">
+            <i class="bi bi-hand-index-thumb gallery-icon"></i>
+            <span>Luxury Nail Art Design</span>
+            <span class="gallery-caption">Nails</span>
+          </div>
+        </div>
+
+        <!-- Item 5: Lounge Area -->
+        <div class="gallery-item" data-category="salon">
+          <div class="gallery-placeholder tall dark-bg">
+            <i class="bi bi-house-heart gallery-icon"></i>
+            <span>Coffee Lounge Seating</span>
+            <span class="gallery-caption">Salon Interior</span>
+          </div>
+        </div>
+
+        <!-- Item 6: Latte Art -->
+        <div class="gallery-item" data-category="coffee">
+          <div class="gallery-placeholder medium gold-bg">
+            <i class="bi bi-cup-straw gallery-icon"></i>
+            <span>Latte Art Creation</span>
+            <span class="gallery-caption">Coffee</span>
+          </div>
+        </div>
+
+        <!-- Item 7: Makeup Application -->
+        <div class="gallery-item" data-category="beauty">
+          <div class="gallery-placeholder short pink-bg">
+            <i class="bi bi-brush gallery-icon"></i>
+            <span>Professional Makeup</span>
+            <span class="gallery-caption">Beauty Treatment</span>
+          </div>
+        </div>
+
+        <!-- Item 8: Lash Extensions -->
+        <div class="gallery-item" data-category="nails">
+          <div class="gallery-placeholder tall cream-bg">
+            <i class="bi bi-eye gallery-icon"></i>
+            <span>Volume Lash Extensions</span>
+            <span class="gallery-caption">Lashes</span>
+          </div>
+        </div>
+
+        <!-- Item 9: Iced Coffee -->
+        <div class="gallery-item" data-category="coffee">
+          <div class="gallery-placeholder medium dark-bg">
+            <i class="bi bi-cup-straw gallery-icon"></i>
+            <span>Iced Caramel Frappuccino</span>
+            <span class="gallery-caption">Coffee</span>
+          </div>
+        </div>
+
+        <!-- Item 10: Pedicure Station -->
+        <div class="gallery-item" data-category="nails">
+          <div class="gallery-placeholder short pink-bg">
+            <i class="bi bi-dribbble gallery-icon"></i>
+            <span>Luxury Pedicure Station</span>
+            <span class="gallery-caption">Pedicure</span>
+          </div>
+        </div>
+
+        <!-- Item 11: Salon Styling Chairs -->
+        <div class="gallery-item" data-category="salon">
+          <div class="gallery-placeholder medium gold-bg">
+            <i class="bi bi-person-standing gallery-icon"></i>
+            <span>Styling Chairs & Mirror Wall</span>
+            <span class="gallery-caption">Salon Interior</span>
+          </div>
+        </div>
+
+        <!-- Item 12: Spa Treatment -->
+        <div class="gallery-item" data-category="beauty">
+          <div class="gallery-placeholder tall cream-bg">
+            <i class="bi bi-flower1 gallery-icon"></i>
+            <span>Relaxing Spa Treatment</span>
+            <span class="gallery-caption">Spa</span>
+          </div>
+        </div>
+
+        <!-- Item 13: Pastries -->
+        <div class="gallery-item" data-category="coffee">
+          <div class="gallery-placeholder short gold-bg">
+            <i class="bi bi-cake2 gallery-icon"></i>
+            <span>Fresh Baked Pastries</span>
+            <span class="gallery-caption">Pastries</span>
+          </div>
+        </div>
+
+        <!-- Item 14: Nail Polish Display -->
+        <div class="gallery-item" data-category="nails">
+          <div class="gallery-placeholder medium pink-bg">
+            <i class="bi bi-palette gallery-icon"></i>
+            <span>Nail Polish Colour Wall</span>
+            <span class="gallery-caption">Nails</span>
+          </div>
+        </div>
+
+        <!-- Item 15: Client Experience -->
+        <div class="gallery-item" data-category="beauty">
+          <div class="gallery-placeholder medium dark-bg">
+            <i class="bi bi-person-heart gallery-icon"></i>
+            <span>Client Relaxation Moment</span>
+            <span class="gallery-caption">Experience</span>
+          </div>
+        </div>
+
+      </div><!-- End gallery-grid -->
+
+      <!-- Note about images for assignment -->
+      <div class="reveal mt-5">
+        <div style="background-color: var(--pink-light); border-left: 4px solid var(--gold); border-radius: 8px; padding: 20px 25px;">
+          <h6 style="color: var(--brown); margin-bottom: 6px; font-family: 'Playfair Display', serif;">Developer Note</h6>
+          <p style="font-size: 0.85rem; margin-bottom: 0; color: var(--text-medium);">
+            Replace the placeholder boxes above with real images. Use GIMP or any photo editor to prepare your images.
+            Save your images in the <strong>images/</strong> folder and use
+            <code>&lt;img src="images/filename.jpg" alt="Description" width="800" height="600"&gt;</code>
+            inside each <code>.gallery-item</code>. The <strong>alt</strong>, <strong>width</strong>, and <strong>height</strong> attributes are required by the assignment marking criteria.
+          </p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="footer">
+    <div class="container">
+      <div class="row g-4">
+        <div class="col-md-4">
+          <h5>Luxe Brew Beauty Lounge</h5>
+          <p>Where beauty meets indulgence. Your luxury self-care destination.</p>
+        </div>
+        <div class="col-md-4">
+          <h5>Quick Links</h5>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="services.html">Services & Menu</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+            <li><a href="booking.html">Book Appointment</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div class="col-md-4">
+          <h5>Contact Us</h5>
+          <p><i class="bi bi-telephone me-2" style="color: var(--gold);"></i> 78628931</p>
+          <p><i class="bi bi-envelope me-2" style="color: var(--gold);"></i> albertlaone2304@gmail.com</p>
+          <p><i class="bi bi-clock me-2" style="color: var(--gold);"></i> Mon–Sat: 8:00 AM – 7:00 PM</p>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 Luxe Brew Beauty Lounge. All Rights Reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
